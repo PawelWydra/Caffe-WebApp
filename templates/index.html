@@ -1,0 +1,23 @@
+{% include 'header.html' %}
+							<section class="tiles">
+								{% for cafe in all_cafes: %}
+								<article class="style{{ rnd_numb }}">
+									<span class="static/image">
+										<img class="img_link" src={{ cafe.img_url }} alt="" />
+									</span>
+									<a href="generic.html">
+										<h2>{{ cafe.name }}</h2>
+										<div class="content">
+											<p>{{ cafe.location }}</p>
+										</div>
+									</a>
+								</article>
+								{% endfor %}
+
+
+							</section>
+
+						</div>
+					</div>
+
+{% include 'footer.html' %}
