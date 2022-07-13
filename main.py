@@ -31,7 +31,7 @@ class Cafe(db.Model):
 @app.route("/")
 def home():
     cafes = db.session.query(Cafe).all()
-    rnd_numb = random.randint(1,6)
+    rnd_numb = random.randint(1, 6)
     return render_template("index.html", all_cafes=cafes, rnd_numb=rnd_numb )
 
 
@@ -122,7 +122,13 @@ def delete_caffe(cafe_id):
             return jsonify(error={"Not Found": "Sorry a cafe with that id was not found in the database"}), 404
 
     else:
-        return jsonify(error={"Not Found": "Sorry, that's not allowed. Make sure you have the corretct api_key."}), 404
+        return jsonify(error={"Not Found": "Sorry, that's not allowed. Make sure you have the correct api_key."}), 404
+
+
+@app.route("/selected_coffee/<int:cafe_id>", methods=["POST", "GET"])
+def selected_coffee(cafe_id):
+    cafe = db.session.query(Cafe).get(cafe_id)
+    return render_template("base.html", cafe=cafe)
 
 
 if __name__ == '__main__':
