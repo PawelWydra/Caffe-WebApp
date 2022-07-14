@@ -128,7 +128,7 @@ def delete_caffe(cafe_id):
 @app.route("/selected_coffee/<int:cafe_id>", methods=["POST", "GET"])
 def selected_coffee(cafe_id):
     cafe = db.session.query(Cafe).get(cafe_id)
-    return render_template("base.html", cafe=cafe)
+    return render_template("cafe.html", cafe=cafe)
 
 
 if __name__ == '__main__':
