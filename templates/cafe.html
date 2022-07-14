@@ -1,5 +1,38 @@
 {% extends 'base.html' %}
-
+{% block title %} {{ cafe.name }}  {% endblock %}
 {% block content %}
-<p>jebac</p>
+<div class="container">
+        <div class="row">
+            <div class="col-lg-8" id="info1">
+                    <section class="tiles">
+                                            <article class="style{{ rnd_numb }}">
+                                                <span class="static/image">
+                                                    <img class="img_link" src={{ cafe.img_url }} alt="" />
+                                                </span>
+                                                <a href="{{ url_for('selected_coffee', cafe_id=cafe.id) }}">
+                                                    <h2>{{ cafe.name }}</h2>
+                                                    <div class="content">
+                                                        <p>{{ cafe.location }}</p>
+                                                    </div>
+                                                </a>
+                                            </article>
+                    </section>
+            </div>
+            <div class="col-lg-6" id="info">
+                <p>{{ cafe.id }}</p>
+                <p>{{cafe.name}}</p>
+                <p>{{ cafe.map_url}}</p>
+                <p>{{ cafe.img_url}}</p>
+                <p>{{ cafe.location}}</p>
+                <p>{{ cafe.seats}}</p>
+                <p>{{ cafe.has_toilet}}</p>
+                <p>{{ cafe.has_wifi}}</p>
+                <p>{{ cafe.has_sockets}}</p>
+                <p>{{cafe.can_take_calls}}</p>
+                <p>{{ cafe.coffee_price}}}}</p>
+            </div>
+            </div>
+        </div>
+</div>
+
 {% endblock %}

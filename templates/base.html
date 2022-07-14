@@ -2,11 +2,13 @@
 
 <html>
 	<head>
-		<title>Coffee and Wifi</title>
+		<title>Caffee and Wi-fi</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="{{ url_for('.static', filename='assets/css/main.css') }}"/>
-		<noscript><link rel="stylesheet" href="static/assets/css/noscript.css" /></noscript>
+		<noscript><link rel="stylesheet" href="{{ url_for('.static', filename='assets/css/noscript.css') }}" /></noscript>
+
 	</head>
 	<body class="is-preload">
 		<!-- Wrapper -->
@@ -18,8 +20,8 @@
 
 							<!-- Logo -->
 								<a href="index.html" class="logo">
-									<span class="symbol"><img src="static/images/coffee.png" alt="" /></span>
-									<span class="title">Coffee and Wi-fi </span>
+									<span class="symbol"><img src="{{ url_for('.static', filename='images/coffee.png') }}" alt="" /></span>
+									<span class="title">{% block title %}{% endblock %}</span>
 								</a>
 
 							<!-- Nav -->
@@ -55,7 +57,7 @@
 
 
 </div>
-					</div>
+</div>
 				<!-- Footer -->
 					<footer id="footer">
 						<div class="inner">
@@ -81,11 +83,13 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="static/assets/js/jquery.min.js"></script>
-			<script src="static/assets/js/browser.min.js"></script>
-			<script src="static/assets/js/breakpoints.min.js"></script>
-			<script src="static/assets/js/util.js"></script>
-			<script src="static/assets/js/main.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+			<script src="{{ url_for('.static', filename='assets/js/jquery.min.js') }}"></script>
+			<script src="{{ url_for('.static', filename='assets/js/browser.min.js') }}"></script>
+			<script src="{{ url_for('.static', filename='assets/js/breakpoints.min.js') }}"></script>
+			<script src="{{ url_for('.static', filename='assets/js/util.js') }}"></script>
+			<script src="{{ url_for('.static', filename='assets/js/main.js') }}"></script>
+
 
 	</body>
-</htm>
+</html>
