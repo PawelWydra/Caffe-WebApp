@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 {% block title %} {{ cafe.name }}  {% endblock %}
 {% block content %}
+<section class="tiles">
 <div class="container">
         <div class="row">
-            <div class="col-lg-8" id="info1">
-                    <section class="tiles">
-                                            <article class="style{{ rnd_numb }}">
+            <div class="col-lg-6" id="info1">
+
+                                            <article class="style{{ rnd_numb }}" id="my_article">
                                                 <span class="static/image">
                                                     <img class="img_link" src={{ cafe.img_url }} alt="" />
                                                 </span>
@@ -16,23 +17,23 @@
                                                     </div>
                                                 </a>
                                             </article>
-                    </section>
             </div>
-            <div class="col-lg-6" id="info">
+            <div class="col-lg-4" id="info">
                 <p>{{ cafe.id }}</p>
                 <p>{{cafe.name}}</p>
-                <p>{{ cafe.map_url}}</p>
-                <p>{{ cafe.img_url}}</p>
+                <p><a href="{{ cafe.map_url }}">google map</a></p>
                 <p>{{ cafe.location}}</p>
                 <p>{{ cafe.seats}}</p>
                 <p>{{ cafe.has_toilet}}</p>
                 <p>{{ cafe.has_wifi}}</p>
                 <p>{{ cafe.has_sockets}}</p>
                 <p>{{cafe.can_take_calls}}</p>
-                <p>{{ cafe.coffee_price}}}}</p>
+                <p>{{ cafe.coffee_price}}</p>
             </div>
             </div>
         </div>
 </div>
+                    </section>
+
 
 {% endblock %}
