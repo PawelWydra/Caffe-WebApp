@@ -2,22 +2,27 @@
 {% block title %}Caffe and Wi-fi{% endblock %}
 
 {% block content %}
-							<section class="tiles">
-								{% for cafe in all_cafes: %}
-								<article class="style{{ rnd_numb }}">
-									<span class="static/image">
-										<img class="img_link" src={{ cafe.img_url }} alt="" />
-									</span>
-									<a href="{{ url_for('selected_coffee', cafe_id=cafe.id) }}">
-										<h2>{{ cafe.name }}</h2>
-										<div class="content">
-											<p>{{ cafe.location }}</p>
-										</div>
-									</a>
-								</article>
-								{% endfor %}
-
-
-							</section>
+<section class="tiles">
+	{% for cafe in all_cafes: %}
+	<article class="style{{ rnd_numb }}">
+		<span class="static/image">
+			<img class="img_link" src={{ cafe.img_url }} alt="" />
+		</span>
+		<a href="{{ url_for('selected_coffee', cafe_id=cafe.id) }}">
+			<h2>{{ cafe.name }}</h2>
+			<div class="content">
+				<p>{{ cafe.location }}</p>
+			</div>
+		</a>
+	</article>
+	{% endfor %}
+</section>
+	<div class="container">
+		<div class="row">
+			<div class="add_button column-sm-12">
+				<button type="button" class="btn btn-outline-danger btn-lg">Add new cafe</button>
+			</div>
+		</div>
+	</div>
 
 {% endblock %}

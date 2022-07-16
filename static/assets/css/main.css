@@ -3183,6 +3183,7 @@ input, select, textarea {
 			-webkit-flex-direction: row;
 			-ms-flex-direction: row;
 			flex-direction: row;
+			text-align: center;
 		}
 
 			#footer > .inner > * > :last-child {
@@ -3190,14 +3191,10 @@ input, select, textarea {
 			}
 
 			#footer > .inner section:nth-child(1) {
-				width: calc(66% - 2.5em);
-				margin-right: 2.5em;
+                width: 100%;
+
 			}
 
-			#footer > .inner section:nth-child(2) {
-				width: calc(33% - 2.5em);
-				margin-left: 2.5em;
-			}
 
 			#footer > .inner .copyright {
 				width: 100%;
@@ -3233,27 +3230,16 @@ input, select, textarea {
 			}
 
 				#footer > .inner section:nth-child(1) {
-					width: calc(66% - 1.25em);
-					margin-right: 1.25em;
+					width: 100%;
 				}
 
-				#footer > .inner section:nth-child(2) {
-					width: calc(33% - 1.25em);
-					margin-left: 1.25em;
-				}
 
 		}
 
 		@media screen and (max-width: 980px) {
 
 			#footer > .inner section:nth-child(1) {
-				width: 66%;
-				margin-right: 0;
-			}
-
-			#footer > .inner section:nth-child(2) {
-				width: calc(33% - 2.5em);
-				margin-left: 2.5em;
+				width: 100%;
 			}
 
 		}
@@ -3277,14 +3263,7 @@ input, select, textarea {
 						margin: 3em 0 0 0;
 					}
 
-					#footer > .inner section:nth-child(2) {
-						-moz-order: -1;
-						-webkit-order: -1;
-						-ms-order: -1;
-						order: -1;
-						width: 100%;
-						margin-left: 0;
-					}
+
 
 					#footer > .inner .copyright {
 						margin-top: 3em;
@@ -3346,3 +3325,11 @@ input, select, textarea {
                 padding-top: 3%;
                 line-height: 0.5em;
         }
+
+
+
+        .add_button {
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 10%;
+                    }
