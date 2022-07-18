@@ -2738,7 +2738,7 @@ input, select, textarea {
 
 				body:not(.is-touch) .tiles article:hover > .image:before {
 					background-color: #333333;
-					opacity: 0.35;
+					opacity: 0.7;
 				}
 
 				body:not(.is-touch) .tiles article:hover > .image:after {
@@ -3165,7 +3165,7 @@ input, select, textarea {
 /* Footer */
 
 	#footer {
-		padding: 5em 2em 6em 0 ;
+		padding: 5em 0 ;
 		background-color: #f6f6f6;
 
 	}
@@ -3311,6 +3311,7 @@ input, select, textarea {
 		.img_link {
 		            width: 100%;
 		            height: 100%;
+		            max-height: 15em;
 
 		}
 
