@@ -3333,4 +3333,27 @@ input, select, textarea {
                     display: flex;
                     justify-content: center;
                     margin-top: 10%;
-                    }
+        }
+        .new_cafe {
+                    position: relative;
+                    justify-content: center;
+        }
+
+          #submit {
+                    margin-top: 50px;
+                    margin-left: 5%;
+                    text-align: center;
+                    width: 30%;
+        }
+        .form-group {
+                        width: 50%;
+                        padding-bottom: 30px;
+
+        }
+        .control-label {
+                        margin-bottom: 0;
+        }
+
+         .form-group input {
+                        height: 25.2px;
+        }
