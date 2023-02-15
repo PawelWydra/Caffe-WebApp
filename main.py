@@ -29,7 +29,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///cafes.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-
 # Cafe TABLE Configuration
 class Cafe(db.Model):
     id = db.Column(db.Integer, primary_key=True)
