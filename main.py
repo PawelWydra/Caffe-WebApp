@@ -2,7 +2,6 @@ from flask import Flask, jsonify, render_template, request, redirect, url_for
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import DataRequired, Email, Length
-from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 import random
 
@@ -22,7 +21,6 @@ class NewCafe(FlaskForm):
 
 
 app = Flask(__name__)
-Bootstrap(app)
 
 # Connect to Database
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///cafes.db'
@@ -69,7 +67,7 @@ def get_random_caffe():
         "has_wifi": random_cafe.has_wifi,
         "has_sockets": random_cafe.has_sockets,
         "can_take_calls": random_cafe.can_take_calls,
-        "coffee_price": random_cafe.coffee_price,
+        "coffee_price": random_cafe.coffee_price
     })
 
 

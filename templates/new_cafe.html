@@ -1,8 +1,5 @@
-{% extends "base.html" %}
-{% import "bootstrap/wtf.html" as wtf %}
-{% block title %}Add New Cafe{% endblock %}
-
-{% block content %}
+{% extends "base.html" %} {% import "bootstrap/wtf.html" as wtf %} {% block
+title %}Add New Cafe{% endblock %} {% block content %}
 <div class="new_cafe">
   {{ wtf.quick_form(form, novalidate=True, button_map={"submit": "success"}) }}
 </div>

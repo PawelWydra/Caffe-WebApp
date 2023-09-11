@@ -6,16 +6,16 @@
         <div class="row">
             <div class="col-lg-6" id="info1">
 
-                                            <article class="style{{ rnd_numb }}" id="my_article">
-                                                <span class="static/image">
-                                                    <img class="img_link" src={{ cafe.img_url }} alt="" />
-                                                </span>
-                                                <a href="{{ url_for('selected_coffee', cafe_id=cafe.id) }}">
-                                                    <h2>{{ cafe.name }}</h2>
-                                                    <div class="content">
-                                                        <p>{{ cafe.location }}</p>
-                                                    </div>
-                                                </a>
+              <article class="style{{ rnd_numb }}" id="my_article">
+                  <span class="static/image">
+                      <img class="img_link" src={{ cafe.img_url }} alt="" />
+                  </span>
+                  <a href="{{ url_for('selected_coffee', cafe_id=cafe.id) }}">
+                      <h2>{{ cafe.name }}</h2>
+                      <div class="content">
+                          <p>{{ cafe.location }}</p>
+                      </div>
+                  </a>
                                             </article>
             </div>
             <div class="col-lg-4" id="info">
