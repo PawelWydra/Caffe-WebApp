@@ -3,28 +3,38 @@
   <head>
     <title>Moja Strona</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('.static', filename='assets/css/main.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
   <body>
     <header>
       <img src="logo.png" alt="Logo" />
-      <nav>
-        <ul>
-          <li><a href="#">Strona główna</a></li>
-          <li><a href="#">O nas</a></li>
-          <li><a href="#">Usługi</a></li>
-          <li><a href="#">Kontakt</a></li>
+      <nav class="navbar">
+        <ul class="nav-list">
+          <li>
+            <a href="#"><i class="fas fa-plus "></i> Create</a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-search"></i> Search</a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-edit"></i> Update</a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-trash-alt"></i> Delete</a>
+          </li>
         </ul>
       </nav>
     </header>
 
-    <section>
-      <div class="image-container">
-        <img src="image1.jpg" alt="Obrazek 1" />
-        <img src="image2.jpg" alt="Obrazek 2" />
-        <img src="image3.jpg" alt="Obrazek 3" />
-      </div>
-    </section>
+    <section class="main">Content</section>
 
     <footer>
       <p>&copy; 2023 Moja Firma</p>
