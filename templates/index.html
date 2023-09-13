@@ -1,5 +1,6 @@
-{% extends "base.html" %} {% block content %}
-<div class="row mb-5">
+{% extends "base.html" %} {% block title %}Caffe and Wi-fi{% endblock %} {%
+block content %}
+<!-- <div class="row mb-5">
   <div class="add_button column-sm-12">
     <a href="{{ url_for('new_cafe') }}">
       <button type="button" class="btn btn-outline-danger btn-lg">
@@ -7,13 +8,11 @@
       </button>
     </a>
   </div>
-</div>
+</div> -->
 <section class="tiles">
   {% for cafe in all_cafes: %}
-  <article class="style{{ rnd_numb }}">
-    <span class="static/image">
-      <img class="img_link" src="{{cafe.img_url}}" alt="" />
-    </span>
+  <article>
+    <img class="img_link" src="{{ cafe.img_url }}" alt="" />
     <a href="{{ url_for('selected_coffee', cafe_id=cafe.id) }}">
       <h2>{{ cafe.name }}</h2>
       <div class="content">
