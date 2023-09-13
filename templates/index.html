@@ -1,14 +1,5 @@
 {% extends "base.html" %} {% block title %}Caffe and Wi-fi{% endblock %} {%
 block content %}
-<!-- <div class="row mb-5">
-  <div class="add_button column-sm-12">
-    <a href="{{ url_for('new_cafe') }}">
-      <button type="button" class="btn btn-outline-danger btn-lg">
-        Add new cafe
-      </button>
-    </a>
-  </div>
-</div> -->
 <section class="tiles">
   {% for cafe in all_cafes: %}
   <article>
