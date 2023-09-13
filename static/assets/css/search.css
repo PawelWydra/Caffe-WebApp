@@ -1,0 +1,8 @@
+.search-form {
+  background-color: #CEAB93;
+  width: 100vw;
+  height: 55vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

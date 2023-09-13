@@ -1,0 +1,51 @@
+/* Caffe section styling */
+
+.cafe {
+  width: 100%;
+  background-color: #ceab93;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+.cafe-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 40px 20px;
+}
+.cafe-picture {
+  width: 400px;
+  max-height: 50%;
+  border-radius: 20%;
+}
+.cafe-text {
+  color: #fff;
+  position: relative;
+  bottom: 80%;
+  text-decoration: none;
+  opacity: 0.7;
+}
+.cafe-description a {
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.7;
+}
+.delete-link {
+  height: 50px;
+  text-decoration: none;
+}
+
+.delete-link:hover {
+  color: red !important;
+}
+
+.update-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.update-link:hover {
+  color: rgb(57, 236, 57) !important;
+}

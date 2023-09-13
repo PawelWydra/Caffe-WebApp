@@ -1,0 +1,12 @@
+{% extends "base.html" %}{% block header%}
+<link
+  rel="stylesheet"
+  href="{{ url_for('.static', filename='assets/css/search.css') }}"
+/>
+{% endblock %} {% block content %}
+<div class="search-form">
+  <form action="/search" method="POST">
+    {{form.csrf_token}} {{form.location}} {{form.submit}}
+  </form>
+</div>
+{% endblock %}
