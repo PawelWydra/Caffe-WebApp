@@ -1,8 +1,14 @@
-{% extends "base.html" %}{% block content %} {block style}<link
+{% extends "base.html" %}{% import "bootstrap/wtf.html" as wtf %}{% block
+header%}
+<link
   rel="stylesheet"
-  href="{{ url_for('.static', filename='assets/css/new_cafe.css') }}"
-/>{endblock}
-<div class="new-cafe">
-  {{ wtf.quick_form(form, novalidate=True, button_map={"submit": "success"}) }}
+  href="{{ url_for('.static', filename='assets/css/new-cafe.css') }}"
+/>
+{% endblock %} {% block content %}
+<div class="new-cafe-form">
+  <form method="POST" action="">
+    {{ wtf.quick_form(form, novalidate=True, button_map={"submit": "success"})
+    }}
+  </form>
 </div>
 {% endblock %}

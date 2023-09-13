@@ -3,6 +3,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
 from flask_sqlalchemy import SQLAlchemy
+from flask_bootstrap import Bootstrap
 import random
 
 
@@ -21,6 +22,9 @@ class NewCafe(FlaskForm):
 
 
 app = Flask(__name__)
+# add it as a environment varible
+app.secret_key = 'your_secret_key_here'
+bootstrap = Bootstrap(app)
 
 # Connect to Database
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///cafes.db"
@@ -96,6 +100,9 @@ def get_cafe_at_location():
 @app.route("/add", methods=["POST", "GET"])
 def post_new_cafe():
     api_key = "TopSecretApiKey"
+    if request.method == "GET":
+        new_cafe = NewCafe()
+        return render_template("new_cafe.html", form=new_cafe)
     if api_key == request.args.get("api_key"):
         new_cafe = Cafe(
             name=request.form.get("name"),

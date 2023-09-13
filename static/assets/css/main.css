@@ -23,6 +23,7 @@ body {
 
 /* Header styling */
 header {
+  padding-top: 5vh;
   background-color: #ad8b73;
   color: #fff;
   text-align: center;
@@ -37,6 +38,7 @@ h1 {
 h2 {
   font-size: 24px;
   margin-bottom: 10px;
+  font-family: "Lato", sans-serif;
 }
 
 p {
@@ -219,6 +221,39 @@ body.is-touch .tiles article .content {
   width: 100%;
   height: 100%;
   max-height: 15rem;
+}
+
+/* Caffe section styling */
+.cafe {
+  width: 100%;
+  background-color: #ceab93;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cafe-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 40px 20px;
+}
+.cafe-picture {
+  width: 400px;
+  max-height: 50%;
+  border-radius: 20%;
+}
+.cafe-text {
+  color: #fff;
+  position: relative;
+  bottom: 190px;
+  text-decoration: none;
+  opacity: 0.7;
+}
+.cafe-description a {
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.7;
 }
 
 /* Footer styling */
