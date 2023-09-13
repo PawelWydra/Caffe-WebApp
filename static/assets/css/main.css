@@ -97,7 +97,7 @@ ul {
   position: relative;
   width: calc(33.33333% - 2.5em);
   margin: 1.5em 1em 1.5em 1.5em;
-  border-radius: 5%;
+  box-shadow: 0px 0px 16px 14px #e3caa5;
 }
 
 .tiles article > .image {
@@ -153,10 +153,6 @@ ul {
 
 .tiles article > a:hover {
   color: #ffffff !important;
-}
-
-.tiles article > a h2 {
-  margin: 0;
 }
 
 .tiles article > a .content {
