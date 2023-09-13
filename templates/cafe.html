@@ -7,12 +7,12 @@
 <section class="cafe">
   <div class="cafe-container">
     <img class="cafe-picture" src="{{ cafe.img_url }}" alt="" />
-    <a
-      class="cafe-text"
-      href="{{ url_for('selected_coffee', cafe_id=cafe.id) }}"
-    >
+    <a class="cafe-text" href="#">
       <h2>{{ cafe.name }}</h2>
     </a>
+    <a class="update-link" href="#"
+      ><i class="fas fa-edit"></i> Update caffe price</a
+    >
   </div>
   <div class="cafe-description">
     <p><a href="{{ cafe.map_url }}">Google Maps: {{ cafe.location }}</a></p>
