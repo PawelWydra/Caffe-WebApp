@@ -21,9 +21,14 @@ class NewCafe(FlaskForm):
     submit = SubmitField("Add Cafe")
 
 
+class SearchForm(FlaskForm):
+    location = StringField("Location", validators=[DataRequired()])
+    submit = SubmitField("Submit")
+
+
 app = Flask(__name__)
 # add it as a environment varible
-app.secret_key = 'your_secret_key_here'
+app.secret_key = "your_secret_key_here"
 bootstrap = Bootstrap(app)
 
 # Connect to Database
@@ -85,10 +90,17 @@ def get_all_cafes():
     return jsonify(cafes=[cafe.to_dict() for cafe in cafes])
 
 
-@app.route("/search")
-def get_cafe_at_location():
-    query_location = request.args.get("loc")
-    cafes = Cafe.query.filter_by(location=query_location).all()
+@app.route("/search", methods=["POST", "GET"])
+def search_page():
+    form = SearchForm()
+    if form.validate_on_submit():
+        return get_cafe_at_location(request.form.get("location"))
+    return render_template("search.html", form=form)
+
+
+@app.route("/search/location", methods=["POST"])
+def get_cafe_at_location(location):
+    cafes = Cafe.query.filter_by(location=location.title()).all()
     if len(cafes) == 0:
         return jsonify(
             error={"Not Found": "Sorry, we don't have a cafe at that location."}
@@ -100,9 +112,6 @@ def get_cafe_at_location():
 @app.route("/add", methods=["POST", "GET"])
 def post_new_cafe():
     api_key = "TopSecretApiKey"
-    if request.method == "GET":
-        new_cafe = NewCafe()
-        return render_template("new_cafe.html", form=new_cafe)
     if api_key == request.args.get("api_key"):
         new_cafe = Cafe(
             name=request.form.get("name"),

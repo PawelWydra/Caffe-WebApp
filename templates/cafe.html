@@ -1,4 +1,9 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}{% block header%}
+<link
+  rel="stylesheet"
+  href="{{ url_for('.static', filename='assets/css/cafe.css') }}"
+/>
+{% endblock %} {% block content %}
 <section class="cafe">
   <div class="cafe-container">
     <img class="cafe-picture" src="{{ cafe.img_url }}" alt="" />
@@ -9,7 +14,7 @@
       <h2>{{ cafe.name }}</h2>
     </a>
   </div>
-  <div class= "cafe-description">
+  <div class="cafe-description">
     <p><a href="{{ cafe.map_url }}">Google Maps: {{ cafe.location }}</a></p>
     <p>How many seats? {{ cafe.seats}}</p>
     <p>Toilets? {{ cafe.has_toilet}}</p>
@@ -17,6 +22,9 @@
     <p>Has sockets? {{ cafe.has_sockets}}</p>
     <p>Can take calls? {{cafe.can_take_calls}}</p>
     <p>Pricing: {{ cafe.coffee_price}}</p>
+    <a class="delete-link" href="{{ url_for('delete_caffe', cafe_id=cafe.id) }}"
+      ><i class="fas fa-exclamation-triangle"></i> Delete</a
+    >
   </div>
 </section>
 

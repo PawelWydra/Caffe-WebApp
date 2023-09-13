@@ -26,18 +26,22 @@
       <nav class="navbar">
         <ul class="nav-list">
           <li>
-            <a href="{{ url_for('post_new_cafe') }}"
+            <a href="{{ url_for('home') }}"
+              ><i class="fa-solid fa-house"></i> Home</a
+            >
+          </li>
+          <li>
+            <a href="{{ url_for('new_cafe') }}"
               ><i class="fas fa-plus"></i> Create</a
             >
           </li>
           <li>
-            <a href="#"><i class="fas fa-search"></i> Search</a>
+            <a href="{{ url_for('search_page') }}"
+              ><i class="fas fa-search"></i> Search</a
+            >
           </li>
           <li>
             <a href="#"><i class="fas fa-edit"></i> Update</a>
-          </li>
-          <li>
-            <a href="#"><i class="fas fa-trash-alt"></i> Delete</a>
           </li>
         </ul>
       </nav>
