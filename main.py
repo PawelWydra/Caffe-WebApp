@@ -8,16 +8,16 @@ import random
 
 
 class NewCafe(FlaskForm):
-    name = StringField("Name", validators=[DataRequired()])
-    map_url = StringField("Map_url", validators=[DataRequired()])
-    img_url = StringField("Img_url", validators=[DataRequired()])
-    location = StringField("Location", validators=[DataRequired()])
-    seats = StringField("Seats", validators=[DataRequired()])
+    name = StringField("Name ", validators=[DataRequired()])
+    map_url = StringField("Map link ", validators=[DataRequired()])
+    img_url = StringField("Image link ", validators=[DataRequired()])
+    location = StringField("Location ", validators=[DataRequired()])
+    seats = StringField("Seats ", validators=[DataRequired()])
     toilet = StringField("Toilet", validators=[DataRequired()])
-    wifi = StringField("wifi", validators=[DataRequired()])
-    sockets = StringField("sockets", validators=[DataRequired()])
-    calls = StringField("Calls", validators=[DataRequired()])
-    coffee_price = StringField("Coffee_price", validators=[DataRequired()])
+    wifi = StringField("Wifi ", validators=[DataRequired()])
+    sockets = StringField("Sockets ", validators=[DataRequired()])
+    calls = StringField("Calls ", validators=[DataRequired()])
+    coffee_price = StringField("Coffee price ", validators=[DataRequired()])
     submit = SubmitField("Add Cafe")
 
 

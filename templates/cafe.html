@@ -10,9 +10,17 @@
     <a class="cafe-text" href="#">
       <h2>{{ cafe.name }}</h2>
     </a>
-    <a class="update-link" href="#"
-      ><i class="fas fa-edit"></i> Update caffe price</a
+    <form
+      action="{{url_for('patch_new_price',cafe_id=cafe.id )}}"
+      method="post"
+      class="form-example"
     >
+      <div class="update-link">
+        <label for="new_price">Update cafe price: </label>
+        <input type="text" name="new_price" id="new_price" required />
+        <button type="submit" id="new_price">change it!</button>
+      </div>
+    </form>
   </div>
   <div class="cafe-description">
     <p><a href="{{ cafe.map_url }}">Google Maps: {{ cafe.location }}</a></p>
