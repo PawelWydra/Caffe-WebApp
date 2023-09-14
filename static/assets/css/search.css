@@ -1,8 +1,49 @@
+form {
+  display: flex;
+  flex-direction: row !important;
+  gap: 10%;
+}
+
 .search-form {
-  background-color: #CEAB93;
+  background-color: #ceab93;
   width: 100vw;
   height: 55vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  row-gap: 40px;
+}
+
+.search-header {
+  font-family: "Lato", Arial, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #6b3e08;
+  background-color: #ad8b73;
+  padding: 15px 20px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  border: 2px solid #6b3e08;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+input {
+  font-family: "Lato", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  border-radius: 10px;
+  background-color: #ad8b73;
+  color: #6b3e08;
+}
+
+#submit {
+  padding: 5px 10px;
+}
+
+#submit:hover {
+  font-size: 18.5px;
 }

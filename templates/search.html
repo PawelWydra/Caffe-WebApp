@@ -5,6 +5,7 @@
 />
 {% endblock %} {% block content %}
 <div class="search-form">
+  <div class="search-header">Enter your location to find coffee shops!</div>
   <form action="/search" method="POST">
     {{form.csrf_token}} {{form.location}} {{form.submit}}
   </form>
