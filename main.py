@@ -6,6 +6,11 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_bootstrap import Bootstrap
 import random
 
+app = Flask(__name__)
+# add it as a environment varible
+app.secret_key = "your_secret_key_here"
+bootstrap = Bootstrap(app)
+
 
 class NewCafe(FlaskForm):
     name = StringField("Name ", validators=[DataRequired()])
@@ -26,10 +31,6 @@ class SearchForm(FlaskForm):
     submit = SubmitField("Submit")
 
 
-app = Flask(__name__)
-# add it as a environment varible
-app.secret_key = "your_secret_key_here"
-bootstrap = Bootstrap(app)
 
 # Connect to Database
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///cafes.db"
