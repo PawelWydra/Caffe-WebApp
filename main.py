@@ -6,10 +6,6 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_bootstrap import Bootstrap
 import random
 
-app = Flask(__name__)
-# add it as a environment varible
-app.secret_key = "your_secret_key_here"
-bootstrap = Bootstrap(app)
 
 
 class NewCafe(FlaskForm):
@@ -56,6 +52,11 @@ class Cafe(db.Model):
         return {
             column.name: getattr(self, column.name) for column in self.__table__.columns
         }
+
+app = Flask(__name__)
+# add it as a environment varible
+app.secret_key = "your_secret_key_here"
+bootstrap = Bootstrap(app)
 
 
 
