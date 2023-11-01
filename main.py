@@ -37,7 +37,6 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///cafes.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)
 
-db.create_all()
 
 # Cafe TABLE Configuration
 class Cafe(db.Model):
@@ -224,6 +223,7 @@ def new_cafe():
         return redirect(url_for("home"))
     return render_template("new_cafe.html", form=form)
 
-
 if __name__ == "__main__":
-    app.run(debug=True)
+    with app.app_context():
+        db.create_all()
+        app.run(debug=True)
