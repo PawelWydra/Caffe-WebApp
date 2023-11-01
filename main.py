@@ -56,6 +56,7 @@ class Cafe(db.Model):
             column.name: getattr(self, column.name) for column in self.__table__.columns
         }
 
+db.create_all()
 
 @app.route("/")
 def home():
