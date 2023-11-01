@@ -57,7 +57,7 @@ class Cafe(db.Model):
         return {
             column.name: getattr(self, column.name) for column in self.__table__.columns
         }
-        
+
 db.create_all()
 
 
@@ -98,9 +98,15 @@ def get_all_cafes():
 def search_page():
     form = SearchForm()
     if form.validate_on_submit():
-        return get_cafe_at_location(request.form.get("location"))
+        location = form.location.data.title()
+        cafes = Cafe.query.filter_by(location=location).all()
+        if len(cafes) == 0:
+            return jsonify(
+                error={"Not Found": "Sorry, we don't have a cafe at that location."}
+            )
+        else:
+            return jsonify(cafe=[cafe.to_dict() for cafe in cafes])
     return render_template("search.html", form=form)
-
 
 @app.route("/search/location", methods=["POST"])
 def get_cafe_at_location(location):
