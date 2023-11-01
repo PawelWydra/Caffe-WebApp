@@ -57,7 +57,8 @@ class Cafe(db.Model):
         return {
             column.name: getattr(self, column.name) for column in self.__table__.columns
         }
-
+        
+db.create_all()
 
 
 @app.route("/")
@@ -225,6 +226,4 @@ def new_cafe():
     return render_template("new_cafe.html", form=form)
 
 if __name__ == "__main__":
-    with app.app_context():
-        db.create_all()
-        app.run(debug=True)
+    app.run(debug=True)
