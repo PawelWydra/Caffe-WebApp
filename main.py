@@ -5,6 +5,7 @@ from wtforms.validators import DataRequired
 from flask_sqlalchemy import SQLAlchemy
 from flask_bootstrap import Bootstrap
 import random
+import os
 
 
 
@@ -33,7 +34,7 @@ bootstrap = Bootstrap(app)
 
 
 # Connect to Database
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///cafes.db"
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_URL")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)
 
