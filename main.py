@@ -37,7 +37,7 @@ bootstrap = Bootstrap(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_URL")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)
-app.app_context.push()
+app.app_context().push()
 
 # Cafe TABLE Configuration
 class Cafe(db.Model):
